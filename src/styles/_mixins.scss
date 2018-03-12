@@ -1,0 +1,379 @@
+/*---------------------------------------------------
+    SASS ELements (based on LESS Elements 0.9 http://lesselements.com)
+  -------------------------------- -------------------
+    LESS ELEMENTS made by Dmitry Fadeyev (http://fadeyev.net)
+    SASS port by Samuel Beek (http://samuelbeek.com)
+  ---------------------------------------------------*/
+
+@mixin gradient($color: #F5F5F5,$start: #EEE,$stop: #FFF) {
+    background:$color;
+    background:-webkit-gradient(linear,left bottom,left top,color-stop(0,$start),color-stop(1,$stop));
+    background:-ms-linear-gradient(bottom,$start,$stop);
+    background:-moz-linear-gradient(center bottom,$start 0%,$stop 100%);
+    background:-o-linear-gradient($stop,$start);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=$start,endColorstr=$stop)
+}
+
+@mixin bw-gradient($color: #F5F5F5,$start: 0,$stop: 255) {
+    background:$color;
+    background:-webkit-gradient(linear,left bottom,left top,color-stop(0,#000),color-stop(1,#000));
+    background:-ms-linear-gradient(bottom,#000 0%,#000 100%);
+    background:-moz-linear-gradient(center bottom,#000 0%,#000 100%);
+    background:-o-linear-gradient(#000,#000);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=rgb($start,$start,$start),endColorstr=rgb($stop,$stop,$stop))
+}
+
+@mixin bordered($border-width:1px,$top-color: #EEE,$right-color: #EEE,$bottom-color: #EEE,$left-color: #EEE) {
+    border-top:solid $border-width $top-color;
+    border-left:solid $border-width $left-color;
+    border-right:solid $border-width $right-color;
+    border-bottom:solid $border-width $bottom-color
+}
+
+@mixin drop-shadow($x-axis: 0,$y-axis: 1px,$blur: 2px,$alpha: 0.1) {
+    -webkit-box-shadow:$x-axis $y-axis $blur rgba(0,0,0,$alpha);
+    -moz-box-shadow:$x-axis $y-axis $blur rgba(0,0,0,$alpha);
+    box-shadow:$x-axis $y-axis $blur rgba(0,0,0,$alpha)
+}
+
+@mixin rounded($radius: 2px) {
+    -webkit-border-radius:$radius;
+    -moz-border-radius:$radius;
+    border-radius:$radius
+}
+
+@mixin border-radius($topright: 0,$bottomright: 0,$bottomleft: 0,$topleft: 0) {
+    -webkit-border-top-right-radius:$topright;
+    -webkit-border-bottom-right-radius:$bottomright;
+    -webkit-border-bottom-left-radius:$bottomleft;
+    -webkit-border-top-left-radius:$topleft;
+    -moz-border-radius-topright:$topright;
+    -moz-border-radius-bottomright:$bottomright;
+    -moz-border-radius-bottomleft:$bottomleft;
+    -moz-border-radius-topleft:$topleft;
+    border-top-right-radius:$topright;
+    border-bottom-right-radius:$bottomright;
+    border-bottom-left-radius:$bottomleft;
+    border-top-left-radius:$topleft
+}
+
+@mixin opacity($opacity: 0.5) {
+    -moz-opacity:$opacity;
+    -khtml-opacity:$opacity;
+    -webkit-opacity:$opacity;
+    opacity:$opacity;
+    $opperc:$opacity * 100
+/*
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=${opperc})";
+  filter: ~"alpha(opacity=${opperc})";
+*/
+}
+
+@mixin transition-duration($duration: 0.2s) {
+    -moz-transition-duration:$duration;
+    -webkit-transition-duration:$duration;
+    -o-transition-duration:$duration;
+    transition-duration:$duration
+}
+
+@mixin transform($arguments) {
+    -webkit-transform:$arguments;
+    -moz-transform:$arguments;
+    -o-transform:$arguments;
+    -ms-transform:$arguments;
+    transform:$arguments
+}
+
+@mixin rotation($deg:5deg) {
+}
+
+@mixin scale($ratio:1.5) {
+}
+
+@mixin transition($duration:0.2s,$ease:ease-out) {
+    -webkit-transition:all $duration $ease;
+    -moz-transition:all $duration $ease;
+    -o-transition:all $duration $ease;
+    transition:all $duration $ease
+}
+
+@mixin inner-shadow($horizontal:0,$vertical:1px,$blur:2px,$alpha: 0.4) {
+    -webkit-box-shadow:inset $horizontal $vertical $blur rgba(0,0,0,$alpha);
+    -moz-box-shadow:inset $horizontal $vertical $blur rgba(0,0,0,$alpha);
+    box-shadow:inset $horizontal $vertical $blur rgba(0,0,0,$alpha)
+}
+
+@mixin box-shadow($arguments) {
+    -webkit-box-shadow:$arguments;
+    -moz-box-shadow:$arguments;
+    box-shadow:$arguments
+}
+
+@mixin box-sizing($sizing: border-box) {
+    -ms-box-sizing:$sizing;
+    -moz-box-sizing:$sizing;
+    -webkit-box-sizing:$sizing;
+    box-sizing:$sizing
+}
+
+@mixin user-select($argument: none) {
+    -webkit-user-select:$argument;
+    -moz-user-select:$argument;
+    -ms-user-select:$argument;
+    user-select:$argument
+}
+
+@mixin columns($colwidth: 250px,$colcount: 0,$colgap: 50px,$columnRuleColor: #EEE,$columnRuleStyle: solid,$columnRuleWidth: 1px) {
+    -moz-column-width:$colwidth;
+    -moz-column-count:$colcount;
+    -moz-column-gap:$colgap;
+    -moz-column-rule-color:$columnRuleColor;
+    -moz-column-rule-style:$columnRuleStyle;
+    -moz-column-rule-width:$columnRuleWidth;
+    -webkit-column-width:$colwidth;
+    -webkit-column-count:$colcount;
+    -webkit-column-gap:$colgap;
+    -webkit-column-rule-color:$columnRuleColor;
+    -webkit-column-rule-style:$columnRuleStyle;
+    -webkit-column-rule-width:$columnRuleWidth;
+    column-width:$colwidth;
+    column-count:$colcount;
+    column-gap:$colgap;
+    column-rule-color:$columnRuleColor;
+    column-rule-style:$columnRuleStyle;
+    column-rule-width:$columnRuleWidth
+}
+
+@mixin translate($x:0,$y:0) {
+}
+
+@mixin background-clip($argument: padding-box) {
+    -moz-background-clip:$argument;
+    -webkit-background-clip:$argument;
+    background-clip:$argument
+}
+
+
+@mixin browser($browsers: Mozilla) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] &:not(.sm-hide) {
+      @content;
+    }
+  }
+}
+
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 575px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: 576px) { @content; }
+  }
+
+  @else if $class == smMax {
+    @media (max-width: 767px) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $class == mdMax {
+    @media (max-width: 991px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: 992px) { @content; }
+  }
+  @else if $class == lgMax {
+    @media (max-width: 1199px) { @content; }
+  }
+
+	@else if $class == xl {
+		@media (min-width: 1200px) { @content; }
+	}
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, smMax, md, mdMax, lg, lgMax, xl";
+  }
+}
+
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+%flexbox { @include flexbox; }
+
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+%inline-flex { @include inline-flex; }
+
+@mixin flex-direction($value: row) {
+  @if $value == row-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: horizontal;
+  } @else if $value == column {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+  } @else if $value == column-reverse {
+    -webkit-box-direction: reverse;
+    -webkit-box-orient: vertical;
+  } @else {
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+  }
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -ms-flex-direction: $value;
+  flex-direction: $value;
+}
+
+@mixin flex-dir($args...) { @include flex-direction($args...); }
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  -moz-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin flex-flow($values: (row nowrap)) {
+  // No Webkit Box fallback.
+  -webkit-flex-flow: $values;
+  -moz-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+@mixin order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  -moz-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+
+@mixin flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -moz-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+
+@mixin flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -ms-flex-preferred-size: $value;
+  flex-basis: $value;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == flex-start {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+  } @else if $value == flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+  } @else if $value == space-between {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+  } @else if $value == space-around {
+    -ms-flex-pack: distribute;
+  } @else {
+    -webkit-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin flex-just($args...) { @include justify-content($args...); }
+
+@mixin align-items($value: stretch) {
+  @if $value == flex-start {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+  } @else if $value == flex-end {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+  } @else {
+    -webkit-box-align: $value;
+    -ms-flex-align: $value;
+  }
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  -moz-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  -moz-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}

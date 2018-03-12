@@ -1,0 +1,128 @@
+/* ===========
+   Common
+ =============*/
+html {
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100%;
+  background: $dark;
+}
+
+
+body {
+  background: $dark;
+  margin: 0;
+  color: $muted;
+  overflow-x: hidden !important;
+  font-size: 0.95rem;
+  font-family: $font-primary;
+}
+
+* {
+  outline: none !important;
+}
+
+a {
+  &:hover,&:active,&:focus {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+      /* These are technically the same, but use both */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    -ms-word-break: break-all;
+    /* This is the dangerous one in WebKit, as it breaks things wherever */
+    word-break: break-all;
+    /* Instead use this non-standard one: */
+    word-break: break-word;
+
+    /* Adds a hyphen where the word breaks, if supported (No Blink) */
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+
+}
+
+.container-alt {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.footer {
+  background-color: lighten($dark,5%);
+  bottom: 0;
+  padding: 20px 30px;
+  position: absolute;
+  right: 0;
+  left: 240px;
+  text-align: center;
+}
+
+#wrapper {
+  height: $height;
+  overflow: hidden;
+  width: $width;
+}
+
+.page {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.card-box {
+  padding: 20px;
+  border: 1px solid rgba(54, 64, 74, .08);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background-clip: padding-box;
+  margin-bottom: 20px;
+  background-color: lighten($dark,2%);
+}
+
+.header-title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 16px;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+.social-links {
+  li {
+    a {
+      -webkit-border-radius: 50%;
+      background: #EFF0F4;
+      border-radius: 50%;
+      color: #7A7676;
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      width: 30px;
+    }
+  }
+}
+
+.mh150 {
+  min-height: 150px;
+}
+
+.text-bigger {
+  font-size: 2.5rem;
+}

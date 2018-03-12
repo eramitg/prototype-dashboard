@@ -1,0 +1,15 @@
+{
+	"localizeRouter": {
+		"home": "home",
+		"cycle": "cycle"
+	},
+	"metaTags": {
+		"title": "NeuroChain Monitor: tableau de bord"
+	},
+	"app": {
+		"changeLanguage": "Changer de langue vers: EN"
+	},
+	"home": {
+		"welcome": "Bienvenue sur votre tableau de bord"
+	}
+}

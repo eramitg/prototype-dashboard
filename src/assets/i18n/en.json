@@ -1,0 +1,15 @@
+{
+	"localizeRouter": {
+		"home": "home",
+		"cycle": "cycle"
+	},
+	"metaTags": {
+		"title": "NeuroChain Monitor: dashboard"
+	},
+	"app": {
+		"changeLanguage": "Switch language to: FR"
+	},
+	"home": {
+		"welcome": "Welcome to dashboard"
+	}
+}

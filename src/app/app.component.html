@@ -1,0 +1,53 @@
+<div id="wrapper">
+
+  <!-- Top Bar Start -->
+  <div class="topbar">
+    <!-- LOGO -->
+    <div class="topbar-left">
+      <div class="text-center">
+        <a href="index.html" class="logo"><i class="material-icons mdi">face</i> <span>NeuroChain</span></a>
+      </div>
+    </div>
+  </div>
+  <!-- Top Bar End -->
+
+  <!-- ========== Left Sidebar start ========== -->
+  <div class="left side-menu">
+    <div class="sidebar-inner slimscrollleft">
+      <!--- Divider -->
+      <div id="sidebar-menu">
+        <em>Version: {{ cpntData.version }}</em><br /><br />
+        <ul>
+          <li>
+            <a [routerLink]="'/dashboard' | localize" routerLinkActive="active" class="waves-effect waves-primary"><i class="ti-home"></i><span> Dashboard </span></a>
+          </li>
+          <li>
+            <a [routerLink]="'/cycle' | localize" routerLinkActive="active" class="waves-effect waves-primary"><i class="ti-home"></i><span> Current cycle </span></a>
+          </li>
+        </ul>
+        <div class="text-center">
+          <button class="btn btn-secondary waves-effect" (click)="changeLanguage()">{{ 'app.changeLanguage' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ========== Left Sidebar end ========== -->
+
+  <!-- ========== main content start ========== -->
+  <div class="content-page">
+    <!-- content -->
+    <div class="content">
+      <div [hidden]="!cpntData.loadingRoute" class="loading"></div>
+      <router-outlet></router-outlet>
+    </div>
+
+    <!-- content -->
+
+    <!-- footer -->
+    <footer class="footer">
+      &copy;2018 NeuroChain project
+    </footer>
+  </div>
+  <!-- ========== main content end ========== -->
+
+</div>

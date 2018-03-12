@@ -1,0 +1,36 @@
+<div class="card-box">
+	<h4 class="header-title m-t-0">Latest transactions</h4>
+	<p class="text-muted m-b-25 font-13">
+		 Everything received since {{ cpntData.timeOnConnect | date:'medium' }}.<br />
+		 Only producer bots are monitored in charts.
+	</p>
+	<table class="table table-striped mb-0">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Creator</th>
+				<th>Content</th>
+				<th>Comment</th>
+				<th>Status</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<ng-container *ngFor="let msg of chartsService.data.transactions;">
+				<tr>
+					<td>{{ msg.blockID }}</td>
+					<td>{{ msg.creator }}</td>
+					<td></td>
+					<td></td>
+					<td><span class="badge badge-info">Validated</span></td>
+					<td (click)="expandBlock(msg.blockID)">
+						<i class="material-icons">arrow_drop_{{ msg.blockID !== cpntData.expandedId ? 'down' : 'up' }}</i>
+					</td>
+				</tr>
+				<tr *ngIf="cpntData.expandedId === msg.blockID">
+					<td colspan="6"><pre class="text-white">{{ msg | json }}</pre></td>
+				</tr>
+			</ng-container>
+		</tbody>
+	</table>
+</div>
